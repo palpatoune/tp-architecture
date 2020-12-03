@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Si-azerty/projet/E1-DESIGN.md.iml" filepath="$PROJECT_DIR$/Si-azerty/projet/E1-DESIGN.md.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Si-azerty/Si-azerty.iml" filepath="$PROJECT_DIR$/Si-azerty/Si-azerty.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tp-architecture.iml" filepath="$PROJECT_DIR$/.idea/tp-architecture.iml" />
     </modules>
   </component>
