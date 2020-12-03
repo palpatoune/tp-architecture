@@ -1,6 +1,6 @@
 # Architecture globale
 
-> nous avons opté pour un modèle MVC 
+> nous avons opte pour un modele MVC
 
 ```mermaid
 graph LR;
@@ -21,3 +21,4 @@ graph LR;
 # Stack technique
 
 ![image_1](../../../image_1.png)
+rajouter Angular
