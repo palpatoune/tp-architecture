@@ -7,10 +7,10 @@ import { AppComponent } from './app.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-
+import {MatTableModule} from '@angular/material/table';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -40,7 +40,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserAnimationsModule,
     MatInputModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
