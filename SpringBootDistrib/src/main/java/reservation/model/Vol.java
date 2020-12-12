@@ -12,18 +12,13 @@ public class Vol {
     private static Hashtable<String, Vol> vols = new Hashtable<>();
     private String airportDepID;
     private String airportArrID;
-    private float price;
-    private int seatCap;
-    private static Hashtable<Integer, Ticket> places;
+    private int price;
 
-    public Vol (String ID, String AirportDepID, String AirportArrID, float price, int SeatMax){
+    public Vol (String ID, String AirportDepID, String AirportArrID, int price){
         this.id = ID;
         this.airportArrID = AirportArrID;
         this.airportDepID = AirportDepID;
         this.price = price;
-        this.seatCap = SeatMax;
-        places = new Hashtable<>(seatCap);
-        // Génerer les tickets pour les places
     }
 
     public Vol() {
@@ -38,17 +33,6 @@ public class Vol {
         return vols.get(ID);
     }
 
-    public boolean BookPlace(int place, String User){
-        if(places.get(place).getUserid() == null) {
-            places.get(place).setUserid(User);
-            return true;
-        }
-        return false;
-    }
-
-    public Hashtable<Integer, Ticket> getPlaces() {
-        return places;
-    }
 
     public String getID() {
         return id;
@@ -66,7 +50,7 @@ public class Vol {
         return price;
     }
 
-    public void setPrice(float price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 

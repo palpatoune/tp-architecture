@@ -6,7 +6,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
 
 @Entity
 public class User {
@@ -18,7 +17,7 @@ public class User {
     private String name;
     private String phone;
     private String mail;
-    private static ArrayList<Ticket> tickets = new ArrayList<>();
+    private static ArrayList<Vol> tickets = new ArrayList<Vol>();
 
     public User(int id, String name, String phone, String mail) {
         this.id = id;
@@ -30,6 +29,11 @@ public class User {
 
     public User() {
 
+    }
+
+    public void reserveVol(Vol v)
+    {
+       tickets.add(v);
     }
 
     public static User getUser(String ID){
@@ -44,13 +48,6 @@ public class User {
         users.remove(ID);
     }
 
-    public void addTicket(Ticket ticket){
-        tickets.add(ticket);
-    }
-
-    public List<Ticket> getTickets(){
-        return tickets;
-    }
 
     public String getName() {
         return name;
@@ -86,7 +83,4 @@ public class User {
         User.users = users;
     }
 
-    public static void setTickets(ArrayList<Ticket> tickets) {
-        User.tickets = tickets;
-    }
 }
