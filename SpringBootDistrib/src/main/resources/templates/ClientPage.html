@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Client</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+    <body>
+        <h1 th:text="Bonjour"></h1>
+
+        <form th:action="@{/user}" th:object="${newUser}" method="post">
+            <p>Nom:</p>
+            <input th:type="text" th:field="*{name}">
+            <p>Mail:</p>
+            <input th:type="text" th:field="*{mail}">
+            <p>Phone:</p>
+            <input th:type="text" th:field="*{phone}">
+            <input th:type="submit" th:value="envoyer">
+        </form>
+
+        <div th:each="user:${usList}">
+            <p th:text="${user.id}"></p>
+            <p th:text="${user.name}"></p>
+            <p th:text="${user.mail}"></p>
+            <p th:text="${user.phone}"></p>
+        </div>
+
+</body>
+</html>
