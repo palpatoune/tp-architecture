@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import {MatTableModule} from '@angular/material/table';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -41,7 +43,9 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,3 +13,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+export class ToolbarOverviewExample {}

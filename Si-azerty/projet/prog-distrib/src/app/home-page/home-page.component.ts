@@ -17,15 +17,15 @@ export class HomePageComponent implements OnInit {
   }
 
 }
-export interface PeriodicElement {
+export interface DepartureData {
   destination: string;
   aeroportdepart: string;
   prix: number;
   symbol: string;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: DepartureData[] = [
   {aeroportdepart: 'Paris CDG', destination: 'JFK', prix: 1.0079, symbol: 'H'},
   {aeroportdepart: 'Detroit DTW', destination: 'CDG', prix: 4.0026, symbol: 'He'},
   {aeroportdepart: 'Paris CDG', destination: 'DTW', prix: 6.941, symbol: 'Li'}
 ];
-
+export class ButtonTypesExample {}
