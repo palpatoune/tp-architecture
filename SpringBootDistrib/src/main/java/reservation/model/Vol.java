@@ -9,7 +9,6 @@ public class Vol {
 
     @Id
     private String id;
-    private static Hashtable<String, Vol> vols = new Hashtable<>();
     private String airportDepID;
     private String airportArrID;
     private int price;
@@ -24,15 +23,6 @@ public class Vol {
     public Vol() {
 
     }
-
-    private static void addVol(Vol vol){
-        vols.put(vol.id,vol);
-    }
-
-    private static Vol getVol(String ID){
-        return vols.get(ID);
-    }
-
 
     public String getID() {
         return id;

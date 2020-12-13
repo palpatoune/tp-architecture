@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tp-architecture.iml" filepath="$PROJECT_DIR$/.idea/tp-architecture.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBootDistrib/SpringBootDistrib.iml" filepath="$PROJECT_DIR$/SpringBootDistrib/SpringBootDistrib.iml" />
     </modules>
   </component>
 </project>

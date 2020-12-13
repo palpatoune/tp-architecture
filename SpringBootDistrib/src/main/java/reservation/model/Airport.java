@@ -10,12 +10,10 @@ public class Airport {
     @Id
     private String id;
     private String name;
-    private static Hashtable<String, Airport> airports = new Hashtable<>();
 
     public Airport(String id, String name) {
         this.id = id;
         this.name = name;
-        airports.put(this.id, this);
     }
 
     public Airport() {
