@@ -35,16 +35,16 @@ public class RestController {
 
     public static void start()
     {
-        User toto = new User(0, "toto", "0389209293", "toto@gmail.com" );
+        User toto = new User("toto", "0389209293", "toto@gmail.com" );
         Airport dtw = new Airport( "DTW","Detroit");
         Airport cdg = new Airport("CDG","CDG Paris" );
         Airport jfk = new Airport("JFK","New York" );
-        Vol vol1 = new Vol( "0", dtw.getId(), cdg.getId(), 1400 );
-        Vol vol2 = new Vol( "1", dtw.getId(), jfk.getId(), 500 );
-        Vol vol3 = new Vol( "2", cdg.getId(), jfk.getId(), 900 );
-        Vol vol4 = new Vol( "3", cdg.getId(), dtw.getId(), 1600 );
-        Vol vol5 = new Vol( "4", jfk.getId(), cdg.getId(), 600 );
-        Vol vol6 = new Vol( "5", jfk.getId(), dtw.getId(), 200);
+        Vol vol1 = new Vol(  dtw.getId(), cdg.getId(), 1400 );
+        Vol vol2 = new Vol(  dtw.getId(), jfk.getId(), 500 );
+        Vol vol3 = new Vol( cdg.getId(), jfk.getId(), 900 );
+        Vol vol4 = new Vol(  cdg.getId(), dtw.getId(), 1600 );
+        Vol vol5 = new Vol(  jfk.getId(), cdg.getId(), 600 );
+        Vol vol6 = new Vol(  jfk.getId(), dtw.getId(), 200);
         userList.add(toto);
         airportList.add(dtw);
         airportList.add(cdg);

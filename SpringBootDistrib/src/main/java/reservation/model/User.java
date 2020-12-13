@@ -24,6 +24,12 @@ public class User {
         this.mail = mail;
     }
 
+    public User( String name, String phone, String mail) {
+        this.name = name;
+        this.phone = phone;
+        this.mail = mail;
+    }
+
     public User() {
 
     }

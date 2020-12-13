@@ -1,6 +1,8 @@
 package reservation.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Hashtable;
 
@@ -8,13 +10,20 @@ import java.util.Hashtable;
 public class Vol {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     private String airportDepID;
     private String airportArrID;
     private int price;
 
-    public Vol (String ID, String AirportDepID, String AirportArrID, int price){
+    public Vol (int ID, String AirportDepID, String AirportArrID, int price){
         this.id = ID;
+        this.airportArrID = AirportArrID;
+        this.airportDepID = AirportDepID;
+        this.price = price;
+    }
+
+    public Vol ( String AirportDepID, String AirportArrID, int price){
         this.airportArrID = AirportArrID;
         this.airportDepID = AirportDepID;
         this.price = price;
@@ -24,7 +33,7 @@ public class Vol {
 
     }
 
-    public String getID() {
+    public int getID() {
         return id;
     }
 
