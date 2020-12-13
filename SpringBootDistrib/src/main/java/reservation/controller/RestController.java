@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import reservation.data.AirportDAO;
+import reservation.data.ReservationDAO;
 import reservation.data.UserDAO;
 import reservation.data.VolDAO;
 import reservation.model.Airport;
+import reservation.model.Reservation;
 import reservation.model.User;
 import reservation.model.Vol;
 
@@ -23,6 +25,7 @@ public class RestController {
     private static List<Airport> airportList = new ArrayList<>();
     private static List<Vol> volList = new ArrayList<>();
     private static List<User> userList = new ArrayList<>();
+    private static List<Reservation> reservationList = new ArrayList<>();
 
     @Autowired
     private AirportDAO airportDAO;
@@ -32,6 +35,9 @@ public class RestController {
 
     @Autowired
     private UserDAO userDAO;
+
+    @Autowired
+    private ReservationDAO reservationDAO;
 
     public static void start()
     {
@@ -55,6 +61,18 @@ public class RestController {
         volList.add(vol4);
         volList.add(vol5);
         volList.add(vol6);
+        Reservation reservation1 = new Reservation(toto.getId(), vol1.getID());
+        Reservation reservation2 = new Reservation(toto.getId(), vol2.getID());
+        Reservation reservation3 = new Reservation(toto.getId(), vol3.getID());
+        Reservation reservation4 = new Reservation(toto.getId(), vol4.getID());
+        Reservation reservation5 = new Reservation(toto.getId(), vol5.getID());
+        Reservation reservation6 = new Reservation(toto.getId(), vol6.getID());
+        reservationList.add(reservation1);
+        reservationList.add(reservation2);
+        reservationList.add(reservation3);
+        reservationList.add(reservation4);
+        reservationList.add(reservation5);
+        reservationList.add(reservation6);
     }
 
     @PostMapping("/user")
@@ -99,6 +117,20 @@ public class RestController {
         return "redirect:vols";
     }
 
+    @GetMapping("/reservations")
+    public String showReservations(Model model){
+        reservationList = reservationDAO.findAll();
+        model.addAttribute("newReservation",new Reservation());
+        model.addAttribute("reservationList",reservationList);
+        return "ReservationPage";
+    }
+
+    @PostMapping("/reservations")
+    public String createReservation(@ModelAttribute Reservation reservation){
+        reservationDAO.save(reservation);
+        return "redirect:reservation";
+    }
+
     @GetMapping("/")
     public String init(Model model){
         for(int i = 0; i < volList.size();i++){
@@ -111,6 +143,10 @@ public class RestController {
 
         for(int i = 0; i < userList.size();i++){
             userDAO.save(userList.get(i));
+        }
+
+        for(int i = 0; i < reservationList.size();i++){
+            reservationDAO.save(reservationList.get(i));
         }
 
         return "redirect:vols";

@@ -2,13 +2,8 @@ package reservation.data;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
-import reservation.model.User;
-
-import java.util.List;
+import reservation.model.Reservation;
 
 @Service
-public interface UserDAO extends JpaRepository <User,Long> {
-
-    List<User> findAll();
-
+public interface ReservationDAO extends JpaRepository<Reservation,Long> {
 }
