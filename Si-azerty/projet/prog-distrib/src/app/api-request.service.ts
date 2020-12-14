@@ -17,7 +17,7 @@ export class ApiRequestService {
   ) { }
 
   apiCall(){
-    return this.http.get('http://localhost:8585/vols').
+    return this.http.get('https://app-air-travel.azurewebsites.net/flights').
       pipe(
         map((data: Vols[]) => {
         return data;

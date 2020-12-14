@@ -2,7 +2,7 @@ import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import {ApiRequestService} from './../api-request.service'
 import {Vols} from './../vols'
-
+import {VolProf} from './../volprof';
 
 @Component({
   selector: 'app-home-page',
@@ -11,7 +11,7 @@ import {Vols} from './../vols'
 })
 export class HomePageComponent implements OnInit {
   vols: Vols[];
-
+  volsprof:VolProf[];
   displayedColumns: string[] = ['id', 'airportDepID', 'airportArrID', 'prix'];
 
 
@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
      this.api.apiCall().subscribe((data : any)=>{
        console.warn("get api data",data);
-       this.vols = data
+       this.volsprof = data
 
 
 

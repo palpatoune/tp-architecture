@@ -1,9 +1,10 @@
+<meta http-equiv="Content-Security-Policy" content="font-src 'self' data:; img-src 'self' data:; default-src 'self' http://121.0.0:3000/">
 <mat-list role="list">
-  <div *ngFor="let vol of vols">
-  <mat-list-item role="listitem" >l'id du vol est : {{vol.id}}</mat-list-item>
-    <mat-list-item role="listitem" > son aeroport de départ est  : {{vol.airportDepID}}</mat-list-item>
-    <mat-list-item role="listitem" > son aéroport d'arrivé est : {{vol.airportArrID}}</mat-list-item>
-    <mat-list-item role="listitem" >son prix est : {{vol.price}}</mat-list-item>
+  <div *ngFor="let vol of volsprof">
+  <mat-list-item role="listitem" >l'id du vol est : {{vol.code}}</mat-list-item>
+    <mat-list-item role="listitem" > son aeroport de départ est  : {{vol.departure}}</mat-list-item>
+    <mat-list-item role="listitem" > son aéroport d'arrivé est : {{vol.arrival}}</mat-list-item>
+    <mat-list-item role="listitem" >son prix est : {{vol.base_price}}</mat-list-item>
 
   </div>
 </mat-list>
