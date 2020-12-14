@@ -17,10 +17,14 @@ graph LR;
 Afin de développer l'API, nous avons décidé d'utiliser l'environement SpringBoot. 
 SpringBoot est un framework open source pour construire et définir l'infrastructure d'une application Java.
 
-
+ ![image](https://github.com/palpatoune/tp-architecture/blob/SI-azerty/images/Architecture.png)
 
 
 
 # Stack technique
+### Applications et data
 
-![image](https://github.com/palpatoune/tp-architecture/blob/SI-azerty/images/Architecture.png)
+ - JavaScript
+ - Java
+ - Angular
+ - SpringBoot
