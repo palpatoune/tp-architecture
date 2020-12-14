@@ -9,7 +9,7 @@ import {ApiRequestService} from './../api-request.service'
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  displayedColumns: string[] = ['aeroportdepart', 'destination', 'prix', 'symbol'];
+  displayedColumns: string[] = ['aeroportdepart', 'destination', 'prix', 'code'];
   dataSource = ELEMENT_DATA;
 
   constructor(private api: ApiRequestService) { }
@@ -17,21 +17,21 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
      this.api.apiCall().subscribe((data)=>{
           console.warn("get api data",data);
-          
+
         })
   }
 
 }
 export interface DepartureData {
-  id: int;
+  code: string;
   airportDepID: string;
   airportArrID: string;
   prix: number;
 
 }
 const ELEMENT_DATA: DepartureData[] = [
-  {aeroportdepart: 'Paris CDG', destination: 'JFK', prix: 1.0079, symbol: 'H'},
-  {aeroportdepart: 'Detroit DTW', destination: 'CDG', prix: 4.0026, symbol: 'He'},
-  {aeroportdepart: 'Paris CDG', destination: 'DTW', prix: 6.941, symbol: 'Li'}
+  {airportDepID: 'Paris CDG', airportArrID: 'JFK', prix: 1.0079, code: 'H'},
+  {airportDepID: 'Detroit DTW', airportArrID: 'CDG', prix: 4.0026, code: 'He'},
+  {airportDepID: 'Paris CDG', airportArrID: 'DTW', prix: 6.941, code: 'Li'}
 ];
 export class ButtonTypesExample {}

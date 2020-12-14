@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+  import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -12,7 +12,7 @@ export class ApiRequestService {
   ) { }
 
   apiCall(){
-    return this.http.get('http://localhost:8585/vols')
+    return this.http.get('https://app-air-travel.azurewebsites.net/flights')
   }
 
 }
