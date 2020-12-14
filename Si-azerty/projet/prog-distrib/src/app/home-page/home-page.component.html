@@ -1,31 +1,12 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-list role="list">
+  <div *ngFor="let vol of vols">
+  <mat-list-item role="listitem" >l'id du vol est : {{vol.id}}</mat-list-item>
+    <mat-list-item role="listitem" > son aeroport de départ est  : {{vol.airportDepID}}</mat-list-item>
+    <mat-list-item role="listitem" > son aéroport d'arrivé est : {{vol.airportArrID}}</mat-list-item>
+    <mat-list-item role="listitem" >son prix est : {{vol.price}}</mat-list-item>
 
-
-  <ng-container matColumnDef="aeroportdepart">
-    <th mat-header-cell *matHeaderCellDef> Aeroport Départ </th>
-    <td mat-cell *matCellDef="let element"> {{element.aeroportdepart}} </td>
-  </ng-container>
-
-  <ng-container matColumnDef="destination">
-    <th mat-header-cell *matHeaderCellDef> Destination </th>
-    <td mat-cell *matCellDef="let element"> {{element.destination}} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="prix">
-    <th mat-header-cell *matHeaderCellDef> Prix </th>
-    <td mat-cell *matCellDef="let element"> {{element.prix}} </td>
-  </ng-container>
-
-
-  <ng-container matColumnDef="symbol">
-    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
-
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+  </div>
+</mat-list>
 
 <h3> </h3>
 <div class="example-button-row">

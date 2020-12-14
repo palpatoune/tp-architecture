@@ -1,6 +1,7 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import {ApiRequestService} from './../api-request.service'
+import {Vols} from './../vols'
 
 
 @Component({
@@ -9,19 +10,33 @@ import {ApiRequestService} from './../api-request.service'
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  displayedColumns: string[] = ['aeroportdepart', 'destination', 'prix', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  vols: Vols[];
+
+  displayedColumns: string[] = ['id', 'airportDepID', 'airportArrID', 'prix'];
+
 
   constructor(private api: ApiRequestService) { }
 
+  dataSource =  this.vols;
+
+
   ngOnInit(): void {
-     this.api.apiCall().subscribe((data)=>{
-          console.warn("get api data",data);
-          
-        })
+     this.api.apiCall().subscribe((data : any)=>{
+       console.warn("get api data",data);
+       this.vols = data
+
+
+
+     })
+
+
+
+
   }
 
 }
+
+
 export interface DepartureData {
   id: int;
   airportDepID: string;
@@ -29,9 +44,5 @@ export interface DepartureData {
   prix: number;
 
 }
-const ELEMENT_DATA: DepartureData[] = [
-  {aeroportdepart: 'Paris CDG', destination: 'JFK', prix: 1.0079, symbol: 'H'},
-  {aeroportdepart: 'Detroit DTW', destination: 'CDG', prix: 4.0026, symbol: 'He'},
-  {aeroportdepart: 'Paris CDG', destination: 'DTW', prix: 6.941, symbol: 'Li'}
-];
+
 export class ButtonTypesExample {}
