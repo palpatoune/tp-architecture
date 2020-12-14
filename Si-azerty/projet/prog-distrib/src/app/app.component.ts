@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import {ApiRequestService} from './api-request.service'
+import {ApiRequestService} from './api-request.service';
+import { HttpClient } from '@angular/common/http';
+
+class RestService {
+}
 
 @Component({
   selector: 'app-root',
@@ -8,13 +12,7 @@ import {ApiRequestService} from './api-request.service'
 })
 export class AppComponent {
   title = 'prog-distrib';
-
-  constructor(
-
-  ){
-
-  }
-
+  constructor(private rs : RestService) { }
   ngOnInit(){
 
   }

@@ -1,25 +1,36 @@
 import { OnInit } from '@angular/core';
 import { Component } from '@angular/core';
-import {ApiRequestService} from './../api-request.service'
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {Vols} from '../../app/vol/vol.component'
 
+function injectable(param: { providedIn: string }) {
+
+}
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+
+export class HomePageComponent {
+
   displayedColumns: string[] = ['aeroportdepart', 'destination', 'prix', 'code'];
   dataSource = ELEMENT_DATA;
+  url: string ='https://app-air-travel.azurewebsites.net/flights';
 
-  constructor(private api: ApiRequestService) { }
+  constructor(private http : HttpClient) { }
+  getUsers()
+  {
+    return this.http.get<Vols[]>(this.url);
+  }
 
-  ngOnInit(): void {
-     this.api.apiCall().subscribe((data)=>{
+  /*ngOnInit(): void {
+     this.url.apiCall().subscribe((data)=>{
           console.warn("get api data",data);
 
         })
-  }
+  }*/
 
 }
 export interface DepartureData {

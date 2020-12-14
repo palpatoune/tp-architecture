@@ -14,8 +14,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 
-
 import { HttpClientModule } from '@angular/common/http';
+import { VolComponent } from './vol/vol.component';
 
 
 
@@ -26,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    VolComponent
   ],
   imports: [
     HttpClientModule,
@@ -39,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     MatTableModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    BrowserModule
   ],
   providers: [
   ],
