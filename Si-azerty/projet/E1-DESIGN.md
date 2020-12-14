@@ -4,6 +4,11 @@
 >Une API en SpringBoot permetant d'interagir avec les données.
 >nous avons opté pour un modèle MVC 
 
+
+
+ ![image](https://github.com/palpatoune/tp-architecture/blob/main/Si-azerty/projet/images/Diagramme%20de%20classe.png)
+
+
 ```mermaid
 graph LR;
     A[MODEL] --> B[VIEW]
