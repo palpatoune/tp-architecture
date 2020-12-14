@@ -1,5 +1,5 @@
 export class Vols {
-  id: int;
+  id: number;
   airportDepID: string;
   airportArrID: string;
   prix: number;

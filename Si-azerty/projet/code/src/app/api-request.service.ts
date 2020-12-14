@@ -21,7 +21,8 @@ export class ApiRequestService {
       pipe(
         map((data: Vols[]) => {
         return data;
-      }), catchError( error => {
+        }),
+        catchError( error => {
         return throwError( 'Something went wrong!' );
       })
     )
