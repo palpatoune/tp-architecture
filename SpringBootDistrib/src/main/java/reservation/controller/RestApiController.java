@@ -3,9 +3,7 @@ package reservation.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import reservation.data.AirportDAO;
 import reservation.data.ReservationDAO;
 import reservation.data.UserDAO;
@@ -14,13 +12,14 @@ import reservation.model.Airport;
 import reservation.model.Reservation;
 import reservation.model.User;
 import reservation.model.Vol;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-@Controller
-public class RestController {
+@RestController
+public class RestApiController {
 
     private static List<Airport> airportList = new ArrayList<>();
     private static List<Vol> volList = new ArrayList<>();
@@ -75,64 +74,63 @@ public class RestController {
         reservationList.add(reservation6);
     }
 
+
+
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/user")
     public String createUser(@ModelAttribute User user){
         userDAO.save(user);
         return "redirect:user";
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/user")
-    public String showUser(Model model)  {
-        userList = userDAO.findAll();
-        model.addAttribute("newUser",new User());
-        model.addAttribute("usList",userList);
-        return "ClientPage";
+    public List<User> showUser()  {
+        return userDAO.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/airports")
-    public String showAirport(Model model){
-        airportList = airportDAO.findAll();
-        model.addAttribute("newAirPort",new Airport());
-        model.addAttribute("airportList",airportList);
-        return "AirportPage";
+    public List<Airport> showAirport(){
+        return airportDAO.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/airports")
-    public String createAirport(@ModelAttribute Airport airport){
+    public void createAirport(Airport airport){
         airportDAO.save(airport);
-        return "redirect:airports";
+
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/vols")
-    public String showVols(Model model){
-        volList = volDAO.findAll();
-        model.addAttribute("newVol",new Vol());
-        model.addAttribute("volList",volList);
-        return "VolPage";
+    public List<Vol> showVols(){
+        return volDAO.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/vols")
     public String createVols(@ModelAttribute Vol vol){
         volDAO.save(vol);
         return "redirect:vols";
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/reservations")
-    public String showReservations(Model model){
-        reservationList = reservationDAO.findAll();
-        model.addAttribute("newReservation",new Reservation());
-        model.addAttribute("reservationList",reservationList);
-        return "ReservationPage";
+    public List<Reservation> showReservations(){
+        return reservationDAO.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/reservations")
     public String createReservation(@ModelAttribute Reservation reservation){
         reservationDAO.save(reservation);
         return "redirect:reservation";
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/")
-    public String init(Model model){
+    public String init(){
         for(int i = 0; i < volList.size();i++){
             volDAO.save(volList.get(i));
         }

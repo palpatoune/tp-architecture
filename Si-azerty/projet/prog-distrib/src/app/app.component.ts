@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ApiRequestService} from './api-request.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'prog-distrib';
+
+  constructor(
+
+  ){
+
+  }
+
+  ngOnInit(){
+
+  }
+
 }

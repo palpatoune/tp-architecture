@@ -14,21 +14,13 @@ import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 
-function initializeKeycloak(keycloak: KeycloakService) {
-  return () =>
-    keycloak.init({
-      config: {
-        url: 'http://localhost:8080/auth',
-        realm: 'your-realm',
-        clientId: 'your-client-id',
-      },
-      initOptions: {
-        onLoad: 'check-sso',
-        silentCheckSsoRedirectUri:
-          window.location.origin + '/assets/silent-check-sso.html',
-      },
-    });
-}
+
+import { HttpClientModule } from '@angular/common/http';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -37,6 +29,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     HomePageComponent
   ],
   imports: [
+    HttpClientModule,
+    KeycloakAngularModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -47,7 +41,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MatToolbarModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
