@@ -28,3 +28,9 @@ SpringBoot est un framework open source pour construire et définir l'infrastruc
  - Java
  - Angular
  - SpringBoot
+ 
+ 
+Nous avons décidé d'utiliser différents frameworks et langages entre le front-end et le back-end.
+Pour l'affichage utilisateur (le front-end), nous utilisersons le JavaScript, le langage HTML et le framework Angular.
+En ce qui concerne le back-end, nous utiliserons le langage Java et le framework Spring ainsi que l'utilisation de JPA pour ourganiser des données relationnelles de manière persistante pour retrouver un fonctionnement similaire à une base de données.
+Le framework Spring nous permet très simplement de créer des applications en tout genre. Dans notre cas, nous allons utiliser ce framework afin de créer quelques API qui seront appelées par le front. Ce framework permet aussi de gérer la connexion à des bases de données pour y stocker des données.
