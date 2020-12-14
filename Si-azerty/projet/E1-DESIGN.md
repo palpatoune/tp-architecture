@@ -20,6 +20,8 @@ SpringBoot est un framework open source pour construire et définir l'infrastruc
  ![image](https://github.com/palpatoune/tp-architecture/blob/SI-azerty/images/Architecture.png)
 
 
+ ![image](https://github.com/palpatoune/tp-architecture/blob/SI-azerty/Si-azerty/projet/Diagramme%20de%20classe.png)
+
 
 # Stack technique
 ### Applications et data
