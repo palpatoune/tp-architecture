@@ -1,0 +1,14 @@
+<mat-list role="list">
+  <div *ngFor="let vol of vols">
+  <mat-list-item role="listitem" >l'id du vol est : {{vol.id}}</mat-list-item>
+    <mat-list-item role="listitem" > son aeroport de départ est  : {{vol.airportDepID}}</mat-list-item>
+    <mat-list-item role="listitem" > son aéroport d'arrivé est : {{vol.airportArrID}}</mat-list-item>
+    <mat-list-item role="listitem" >son prix est : {{vol.price}}</mat-list-item>
+
+  </div>
+</mat-list>
+
+<h3> </h3>
+<div class="example-button-row">
+  <button mat-button color="primary">Reserver</button>
+</div>
